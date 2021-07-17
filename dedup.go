@@ -8,10 +8,10 @@ func dedup(input []int) (output []int) {
 		return
 	}
 
-	output = make([]int, 0, len(input))
+	output = make([]int, 1, len(input))
 	sortedinput := append([]int(nil), input...) //copy
 	sort.Ints(sortedinput)
-	output = append(output, sortedinput[0])
+	output[0] = sortedinput[0]
 
 	for i := 1; i < len(sortedinput); i++ {
 		if sortedinput[i-1] == sortedinput[i] {
